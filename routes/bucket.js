@@ -4,7 +4,9 @@ const qiniuCtrl = require('../controllers/bucketController')
 // router.prefix('/api/v1')
 
 router.get('/buckets', qiniuCtrl.buckets)
-router.post('/mkbucket', qiniuCtrl.mkbucket)
-router.get('/domainlist', qiniuCtrl.domainlist)
+  .post('/mkbucket', qiniuCtrl.mkbucket)
+  .get('/dropbuctet/:bucket', qiniuCtrl.dropbuctet)
+  .get('/domainlist/:bucket', qiniuCtrl.domainlist)
+  .post('/bucketPrivate', qiniuCtrl.bucketPrivate)
 
 module.exports = router
