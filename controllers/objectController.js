@@ -12,7 +12,11 @@ const Host_Config = {
 const mac = new qiniu.auth.digest.Mac(qiniuConfig.ACCESS_KEY, qiniuConfig.SECRET_KEY)
 
 class ObjectController {
-
+  /**
+   * 资源元信息查询
+   * @method GET
+   * @param {bucket, key}
+   */
   static async metainfo (ctx) {
     let bucket = ctx.params.bucket
     let key = ctx.params.key
