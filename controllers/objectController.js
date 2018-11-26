@@ -30,6 +30,10 @@ class ObjectController {
       return ctx.error({data: error.toString()})
     }
   }
+
+  static async deleteAfterDays () {
+
+  }
 }
 
 module.exports = ObjectController
