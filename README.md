@@ -41,6 +41,17 @@ data: {
 1. 资源元信息查询, 仅获取资源的 `Metadata` 信息
 ```
 GET: /api/metainfo/<bucket>/<key>
+@return {
+    "code": 200,
+    "msg": "操作成功！",
+    "data": {
+        "fsize": 222605,
+        "hash": "FrzkHBy8S162RKHFaxXtpHokgrdC",
+        "mimeType": "image/jpeg",
+        "putTime": 15024139829990268,
+        "type": 0
+    }
+}
 ```
 
 2. 更新文件生命周期, 设置指定资源的生命周期
@@ -48,7 +59,12 @@ GET: /api/metainfo/<bucket>/<key>
 GET: /api/deleteAfterDays/<bucket>/<key>
 ```
 
-3.
+3. 列举指定空间里的所有文件条目
+```
+GET: /api/files/<bucket>?marker=<marker>&limit=<limit>&prefix=<prefix>
 ```
 
+4. 设置指定资源的生命周期
+```
+GET: /api/lifecycle/<bucket>/<key>/<day>
 ```
